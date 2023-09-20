@@ -1,4 +1,4 @@
-package main
+package label
 
 import (
 	"github.com/stretchr/testify/require"

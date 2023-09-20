@@ -1,4 +1,4 @@
-package main
+package label
 
 type Label struct {
 	start int
@@ -6,10 +6,14 @@ type Label struct {
 	s     string
 }
 
-func main() {
-	// somesuperlongstring
-}
-
 func label(str string, labels []Label) string {
-	return "lamdsupertinystring"
+	if len(labels) == 0 {
+		return str
+	}
+
+	for _, label := range labels {
+		str = str[:label.start-1] + label.s + str[label.end:]
+	}
+
+	return str
 }
